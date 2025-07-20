@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Attendance Records</title>
+</head>
+<body>
+    <h2>Your Attendance Records</h2>
+    <table border="1">
+        <tr><th>Date</th><th>Time</th></tr>
+        {% for row in records %}
+            <tr><td>{{ row[0] }}</td><td>{{ row[1] }}</td></tr>
+        {% endfor %}
+    </table>
+
+    <a href="/dashboard">Back to Dashboard</a>
+</body>
+</html>

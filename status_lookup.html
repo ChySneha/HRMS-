@@ -1,0 +1,121 @@
+<!-- <!DOCTYPE html>
+<html>
+<head>
+    <title>Check Status</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #eef2f7;
+            background: url('https://images.unsplash.com/photo-1523287562758-66c7fc58967f?auto=format&fit=crop&w=1950&q=80') no-repeat center center fixed;
+            text-align: center;
+            padding: 50px;
+        }
+        .status-box {
+            background-color: white;
+            border-radius: 10px;
+            padding: 40px;
+            display: inline-block;
+            box-shadow: 0 0 10px rgba(0,0,0,0.2);
+        }
+        .status {
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+        .btn {
+            padding: 10px 20px;
+            background-color: #007acc;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+        .btn:hover {
+            background-color: #005fa3;
+        }
+    </style>
+</head>
+<body>
+    <h2>Check Your Application Status</h2>
+    <form method="POST">
+        <label for="userid">Enter User ID:</label>
+        <input type="text" name="userid" required>
+        <button type="submit">Check Status</button>
+    </form>
+</body>
+</html> -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Check Status</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: url('https://images.unsplash.com/photo-1523287562758-66c7fc58967f?auto=format&fit=crop&w=1950&q=80') no-repeat center center fixed;
+            background-size: cover;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 35vh;
+        }
+
+        .status-form-container {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 30px 40px;
+            border-radius: 15px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+            text-align: center;
+        }
+
+        h2 {
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        label {
+            font-weight: bold;
+            display: block;
+            margin-bottom: 10px;
+            color: #444;
+        }
+
+        input[type="text"] {
+            padding: 10px;
+            width: 250px;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            margin-bottom: 20px;
+            font-size: 16px;
+        }
+
+        button {
+            padding: 10px 25px;
+            background-color: #0979f1;
+            border: none;
+            color: white;
+            font-size: 16px;
+            border-radius: 6px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #074588;
+        }
+    </style>
+</head>
+<body>
+    <div class="status-form-container">
+        <h2>Check Your Application Status</h2>
+        <form method="POST">
+            <label for="userid">Enter User ID:</label>
+            <input type="text" name="userid" required>
+            <br>
+            <button type="submit">Check Status</button>
+        </form>
+    </div>
+</body>
+</html>

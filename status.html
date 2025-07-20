@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Status</title>
+  <style>
+    body {
+      background-color: #f2f2f2;
+      background: url('https://images.unsplash.com/photo-1523287562758-66c7fc58967f?auto=format&fit=crop&w=1950&q=80') no-repeat center center fixed;
+      font-family: Arial, sans-serif;
+    }
+    .status-container {
+      max-width: 600px;
+      margin: 100px auto;
+      padding: 30px;
+      background-color: #fff;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+      border-radius: 12px;
+      text-align: center;
+    }
+    h2 {
+      margin-bottom: 20px;
+      color: #333;
+    }
+    p {
+      font-size: 18px;
+      margin: 10px 0;
+    }
+    a.home-link {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 10px 20px;
+      background-color: #032142;
+      color: white;
+      text-decoration: none;
+      border-radius: 8px;
+    }
+    a.home-link:hover {
+      background-color: #0056b3;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="status-container">
+    <h2>Status for User ID: {{ userid }}</h2>
+
+    {% if status == 'Pending' %}
+      <p style="color: orange;">Your application is <strong>Pending</strong>. Please wait for HR approval.</p>
+    
+    {% elif status == 'Approved' %}
+      <p style="color: rgb(58, 234, 58);">Congratulations! You are <strong>Approved</strong>.</p>
+      <p style="color: rgb(236, 9, 156);"><strong>You may now</strong> <a href="/login"><strong>Login</strong></a>.</p>
+    
+    {% elif status == 'Rejected' %}
+      <p style="color: red;">Sorry, your application has been <strong>Rejected</strong>. You cannot proceed.</p>
+    
+    {% else %}
+      <p>Status not found.</p>
+    {% endif %}
+
+    <a href="/" class="home-link">Return to Home</a>
+  </div>
+
+</body>
+</html>

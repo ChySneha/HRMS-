@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Mark Attendance</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: url('https://images.unsplash.com/photo-1523287562758-66c7fc58967f?auto=format&fit=crop&w=1950&q=80') no-repeat center center fixed;
+      background-size: cover;
+      color: #333;
+    }
+
+    .container {
+      max-width: 600px;
+      margin: 100px auto;
+      background: white;
+      padding: 40px;
+      border-radius: 16px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+      text-align: center;
+    }
+
+    h1 {
+      margin-bottom: 30px;
+      color: #007acc;
+    }
+
+    .info-box {
+      margin: 20px 0;
+      font-size: 18px;
+      background-color: #f0f8ff;
+      padding: 15px;
+      border-radius: 8px;
+      border: 1px solid #007acc;
+    }
+
+    .btn {
+      background-color: #007acc;
+      color: white;
+      padding: 12px 24px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 16px;
+      margin-top: 20px;
+    }
+
+    .btn:hover {
+      background-color: #005f99;
+    }
+
+    a {
+      display: inline-block;
+      margin-top: 30px;
+      color: #007acc;
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>🕒 Mark Your Attendance</h1>
+
+
+    <form method="POST" action="/attendance">
+        <button type="submit">Punch In</button>
+    </form>
+
+    {% if punch_time %}
+        <p>✅ Attendance marked!</p>
+        <p><strong>Date:</strong> {{ punch_date }}</p>
+        <p><strong>Time:</strong> {{ punch_time }}</p>
+    {% endif %}
+
+    <a href="/dashboard" class="btn">Back to Dashboard</a>
+  </div>
+</body>
+</html>

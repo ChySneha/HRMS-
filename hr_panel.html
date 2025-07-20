@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>HR Panel</title>
+  <style>
+    body {
+      font-family: Arial;
+      background: url('https://images.unsplash.com/photo-1523287562758-66c7fc58967f?auto=format&fit=crop&w=1950&q=80') no-repeat center center fixed;
+      background-size: cover;
+      padding: 40px;
+    }
+
+    h2 {
+      text-align: center;
+      margin-bottom: 30px;
+      color: #333;
+    }
+
+    table {
+      margin: auto;
+      border-collapse: collapse;
+      width: 90%;
+      max-width: 1000px;
+      background-color: white;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+
+    th, td {
+      padding: 12px 16px;
+      border: 1px solid #ccc;
+      text-align: center;
+    }
+
+    th {
+      background-color: #007acc;
+      color: white;
+    }
+
+    tr:nth-child(even) {
+      background-color: #f9f9f9;
+    }
+
+    .btn-approve {
+      background-color: #28a745;
+      color: white;
+      border: none;
+      padding: 6px 12px;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    .btn-reject {
+      background-color: #dc3545;
+      color: white;
+      border: none;
+      padding: 6px 12px;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    .btn-view {
+      background-color: #007bff;
+      color: white;
+      padding: 6px 12px;
+      border-radius: 4px;
+      text-decoration: none;
+    }
+
+    .status {
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <h2>HR Approval Panel</h2>
+  <table>
+    <tr>
+      <th>UserID</th>
+      <th>First Name</th>
+      <th>Middle Name</th>
+      <th>Last Name</th>
+      <th>Joining Date</th>
+      <th>Status</th>
+      <th>Actions</th>
+    </tr>
+    {% for u in users %}
+    <tr>
+      <td>{{ u[0] }}</td>
+      <td>{{ u[1] }}</td>
+      <td>{{ u[2] }}</td>
+      <td>{{ u[3] }}</td>
+      <td>{{ u[4] }}</td>
+      <td class="status">{{ u[5] }}</td>
+      <td>
+        {% if u[5]|lower == 'pending' %}
+        <form method="POST" style="display:inline;">
+          <input type="hidden" name="userid" value="{{ u[0] }}">
+          <button type="submit" name="action" value="approve" class="btn-approve">Approve</button>
+          <button type="submit" name="action" value="reject" class="btn-reject">Reject</button>
+        </form>
+        {% endif %}
+        <a href="/employee/{{ u[0] }}" class="btn-view">View</a>
+        <a href="/employee/{{ u[0] }}/edit" class="btn-view">Edit</a>
+      </td>
+    </tr>
+    {% endfor %}
+  </table><br><br>
+
+  <div style="text-align: center;">
+    <a href="/" style="
+      display: inline-block;
+      padding: 10px 20px;
+      background-color: #032c57;
+      color: white;
+      text-decoration: none;
+      border-radius: 6px;
+      font-weight: bold;
+    ">Return to Home</a>
+  </div>
+</body>
+</html>
